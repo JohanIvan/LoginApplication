@@ -22,7 +22,7 @@ public class ValidarLogin {
         if(!verificarLongitudNombre(usuario.getNombre())){
             return("Longitud nombre incorrecta");
         }
-        if(!verificarLongitudPassword(usuario.getNombre())){
+        if(!verificarLongitudPassword(usuario.getPassword())){
             return ("Longitud contraseña incorrecta");
         }
         for (Usuario u: sistema.getUsuarios()){
@@ -38,6 +38,6 @@ public class ValidarLogin {
     }
     
     public boolean verificarLongitudPassword (String password){
-        return (password.length() >= 3 && password.length() < 6);
+        return ((password.length() >= 3) && (password.length() < 6));
     }
 }
