@@ -165,11 +165,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         Usuario b = new Usuario();
         Usuario c = new Usuario();
         
-        a.setNombre("Juan");
+        a.setNombre("juan");
         a.setPassword("1234");
-        b.setNombre("Pedro");
+        b.setNombre("pedro");
         b.setPassword("123");
-        c.setNombre("Maria");
+        c.setNombre("maria");
         c.setPassword("12345");
         
         
