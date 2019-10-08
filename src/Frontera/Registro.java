@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Frontera;
+import Control.RegistrarUsuario;
 
 /**
  *
@@ -33,6 +34,7 @@ public class Registro extends javax.swing.JPanel {
         nombreTF = new javax.swing.JTextField();
         contraseniaTF = new javax.swing.JTextField();
         validarContraseniaTF = new javax.swing.JTextField();
+        aceptarB = new javax.swing.JButton();
 
         jLabel1.setText("Nombre:");
 
@@ -43,6 +45,13 @@ public class Registro extends javax.swing.JPanel {
         contraseniaTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 contraseniaTFActionPerformed(evt);
+            }
+        });
+
+        aceptarB.setText("Aceptar");
+        aceptarB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aceptarBActionPerformed(evt);
             }
         });
 
@@ -57,10 +66,12 @@ public class Registro extends javax.swing.JPanel {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addGap(74, 74, 74)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(validarContraseniaTF, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
-                    .addComponent(contraseniaTF)
-                    .addComponent(nombreTF))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(aceptarB)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(validarContraseniaTF, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                        .addComponent(contraseniaTF)
+                        .addComponent(nombreTF)))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -78,7 +89,9 @@ public class Registro extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(validarContraseniaTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(aceptarB)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -86,8 +99,16 @@ public class Registro extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_contraseniaTFActionPerformed
 
+    private void aceptarBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aceptarBActionPerformed
+        RegistrarUsuario regUsuario = new RegistrarUsuario();
+        String resultado = regUsuario.verificarDatos(nombreTF.getText(), contraseniaTF.getText() , validarContraseniaTF.getText());
+        System.out.println("----------");
+        System.out.println(resultado);
+    }//GEN-LAST:event_aceptarBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aceptarB;
     private javax.swing.JTextField contraseniaTF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
