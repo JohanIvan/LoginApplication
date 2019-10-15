@@ -24,6 +24,10 @@ public class RegistrarUsuario {
         if(!verificarLongitudPassword(contraseña)){
             return ("Longitud contraseña incorrecta");
         }
+        for (Usuario u: sistema.getUsuarios()){
+            if (u.getNombre().equals(nombre)){
+                return ("Nombre de Usuario ya registrado");}
+            }
         if (contraseña.equals(confContraseña)){
             Usuario usuarioNuevo = new Usuario();
             usuarioNuevo.setNombre(nombre);
